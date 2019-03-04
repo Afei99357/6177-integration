@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Log In Smart Mart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <fieldset style="width: 300px">
+	<legend> Log In Smart Mart </legend>
+        <input type="submit" name = "" value="Customer" onclick="hideVendorForm()" >
+        <input type="submit" name = "" value="Vendor" onclick="hideCustomerForm()" >
+        
+        <form id="customerForm" action="Customer" method="Post">
+            <table>
+				<tr>
+					<td>Email Address</td>
+					<td><input  type="email" name="email" required="required" /></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input  type="password" name="userpass" required="required" /></td>
+				</tr>   
+                                <tr>
+                                       <td><input type="submit" name="action" value="Log in" /></td>          
+				</tr>
+                                <tr>
+                                    <td style="white-space:nowrap;"><a href="https://www.facebook.com">Log in with Facebook.</a></td>
+                                </tr>
+            </table>
+            <p>  Don't have an account yet? <a href="https://www.facebook.com"> Register now </a> </p>
+        </form>
+        <form id="vendorForm" action="Vendor" method="Post" style="display:none">
+            <table>
+				<tr>
+					<td>Email Address</td>
+					<td><input id="vendorEmail" type="email" name="email" /></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input id="vendorPassword" type="password" name="userpass" /></td>
+				</tr>
+                                <tr>
+                                       <td><input type="submit" name="action" value="Log in" /></td>          
+				</tr>
+            </table>
+             <p>  Don't have an account yet? <a href="https://www.facebook.com"> Register as a Vendor now </a> </p>
+        </form>
+        </fieldset> 
+        <script>       
+        function hideVendorForm() {
+                document.getElementById("vendorForm").style.display="none";   // The function hides the vendor's log in area
+                document.getElementById("customerForm").style.display="block";  //showing the customer's log in area
+        } 
+        
+        function hideCustomerForm() {
+                document.getElementById("customerForm").style.display="none";   // The function hides the customer's log in area
+                document.getElementById("vendorForm").style.display="block";  //showing the vendor's log in area
+        } 
+        </script>
+    </body>
+</html>
